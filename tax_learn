@@ -1,0 +1,75 @@
+from tkinter import *
+from PIL import ImageTk, Image
+#def Vat_study():
+
+def learn_window ():
+        def what_tax_learn(): #company tax %
+                        #show pic info
+                print("ok")
+                pic = Image.open("pic\what_tax2.png")
+                pic = pic.resize((int(pic.width * .6),int(pic.height *.6)))
+                image = ImageTk.PhotoImage(pic)
+                image_label = Label(image=image)
+                image_label.image=image
+                #return 
+                canvas.create_window(480,380,window=image_label)
+                        #image_label.place(480,380)
+                        #return Tax_learn.company_tax_learn(cv.create_window(480,380,window=image_label))
+
+        def type_learn():#person tax %
+                print("ok")
+                pic = Image.open("pic\\tpye_tax2.png")
+                pic = pic.resize((int(pic.width * .6),int(pic.height *.6)))
+                image = ImageTk.PhotoImage(pic)
+                image_label = Label(image=image)
+                image_label.image=image
+                #return (image)
+                canvas.create_window(480,380,window=image_label)
+                        
+        def How_vat():#การหา VAT
+                print("ok")
+                pic = Image.open("pic\how_vat2.png")
+                pic = pic.resize((int(pic.width * .6),int(pic.height *.6)))
+                image = ImageTk.PhotoImage(pic)
+                image_label = Label(image=image)
+                image_label.image=image
+                #return
+                canvas.create_window(480,380,window=image_label)
+
+        def How_tax():#การหาภาษีหัก ณ ที่จ่าย
+                print("ok")
+                pic = Image.open("pic\how_tax2.png")
+                pic = pic.resize((int(pic.width * .6),int(pic.height *.6)))
+                image = ImageTk.PhotoImage(pic)
+                image_label = Label(image=image)
+                image_label.image=image
+                #return
+                canvas.create_window(480,380,window=image_label)
+
+        root = Tk()
+        root.title('เรียนรู้เรื่องภาษีหัก ณ ที่จ่าย')
+        #กำหนดขนาดด้วย canvas
+        canvas = Canvas(root,width=960,height=640,bg='white')
+        canvas.pack()
+        #btn ภาษีหัก คือ
+        whattax_learn = Button (root,text='ภาษีหัก ณ ที่จ่าย คือ ... ',font=('Arial',20,'bold'),command=what_tax_learn,bg='green',fg='white',width=20)
+        canvas.create_window(195,50,window=whattax_learn)
+        
+        #btn % บุคคล
+        tpyetax_learn = Button (root,text='อัตราหักภาษี ณ ที่จ่าย',font=('Arial',20,'bold'),command=type_learn,bg='blue',fg='white',width=20)
+        canvas.create_window(195,100,window=tpyetax_learn)
+
+        #ประเภทของ % ภาษี
+        pro_name1 = Label(root,text='ขั้นตอนการคำนวณมีขั้นดังนี้ ',font=('Arial',20,'bold'),fg='black',bg='white')
+        canvas.create_window(550,70,window=pro_name1)
+
+        #btn การหา VAT
+        how_vat = Button (root,text='1.การคำนวณภาษีมูลค่าเพิ่ม (VAT)',font=('Arial',14,'bold'),command=How_vat,bg='red',fg='white')
+        canvas.create_window(530,108,window=how_vat)
+        #btn การหาภาษีหัก ณ ที่จ่าย
+        how_tax = Button (root,text='2.การคำนวณหักภาษี ณ ที่จ่าย',font=('Arial',14,'bold'),command=How_tax,bg='orange',fg='white')
+        canvas.create_window(820,108,window=how_tax)
+
+        root.mainloop()
+
+learn_window()
